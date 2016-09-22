@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "",
-"sources": [],
+"mappings": "AAAA,CAAE;EACA,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;;ACAZ,WAAY;EACV,UAAU,EAHI,OAAO;EAIrB,SAAS,EAAE,KAAK;EAChB,MAAM,EAAE,IAAI;EACZ,MAAM,EAAE,MAAM",
+"sources": ["../stylesheets/_reset.scss","../stylesheets/_signupForm.scss"],
 "names": [],
 "file": "main.css"
 }
