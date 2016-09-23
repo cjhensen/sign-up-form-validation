@@ -9,39 +9,48 @@
   <div id="signupForm">
     <h1>Sign Up!</h1>
     <form action="#" method="post">
-      <p>
+      <div>
         <label for="firstName">First Name</label>
         <input id="firstName" name="firstName" type="text">
-      </p>
+      </div>
 
-      <p>
+      <div>
         <label for="lastName">Last Name</label>
         <input id="lastName" name="lastName" type="text">
-      </p>
+      </div>
 
-      <p>
+      <div>
         <label for="email">Email</label>
         <input id="email" name="email" type="email">
-      </p>
+      </div>
 
-      <p>
+      <div>
         <label for="username">Username</label>
         <input id="username" name="username" type="text">
-      </p>
+      </div>
 
-      <p>
+      <div>
         <label for="password">Password</label>
         <input id="password" name="password" type="password">
-      </p>
+        <span>
+          <ul>
+            Password must include:
+            <li>8 or more characters<span class="passwordIndicator"></span></li>
+            <li>An uppercase letter<span class="passwordIndicator"></span></li>
+            <li>A number<span class="passwordIndicator"></span></li>
+            <li>A special character<span class="passwordIndicator"></span></li>
+          </ul>
+        </span>
+      </div>
 
-      <p>
+      <div>
         <label for="confirmPassword">Confirm Password</label>
         <input id="confirmPassword" name="confirmPassword" type="password">
-      </p>
+      </div>
 
-      <p>
+      <div>
         <input type="submit" value="Sign Up" id="signup">
-      </p>
+      </div>
 
     </form>
   </div> <!-- end .signupForm -->
