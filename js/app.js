@@ -5,7 +5,6 @@ var SignupForm = (function() {
   var formInputs = document.getElementsByTagName('input');
   var passwordInput = document.getElementById('password');
   var passwordIndicator = document.getElementsByClassName('passwordIndicator');
-  console.log(passwordIndicator);
   var confirmPasswordInput = document.getElementById('confirmPassword');
 
   var addAnimationClass = function() {
@@ -69,8 +68,50 @@ var SignupForm = (function() {
     }
   };
 
-  passwordInput.addEventListener("focus", isPasswordValid);
+  var arePasswordsMatching = function() {
+    if(passwordInput.value !== "" && passwordInput.value === confirmPasswordInput.value) {
+      passwordIndicator[4].style.display="inline";
+      return true;
+    } else {
+      passwordIndicator[4].style.display="none";
+      return false;
+    }
+  };
+
+  var confirmPassword = function() {
+    if(arePasswordsMatching()) {
+      console.log("Matching!");
+    }
+  };
+
+  var showPasswordIndicators = function(input) {
+    var indicators = input.nextElementSibling;
+    if(indicators.style.display === "inline") {
+      indicators.style.display="none";
+    } else {
+      indicators.style.display="inline";
+    }
+  };
+
+  // Event listeners
+  passwordInput.addEventListener("focus", function(){
+    isPasswordValid();
+    showPasswordIndicators(passwordInput);
+  });
   passwordInput.addEventListener("keyup", isPasswordValid);
+  passwordInput.addEventListener("blur", function(){
+    showPasswordIndicators(passwordInput);
+  });
+
+  confirmPasswordInput.addEventListener("focus", function() {
+    confirmPassword();
+    showPasswordIndicators(confirmPasswordInput);
+  });
+  confirmPasswordInput.addEventListener("blur", function(){
+    showPasswordIndicators(confirmPasswordInput);
+  });
+  confirmPasswordInput.addEventListener("keyup", confirmPassword);
+  // confirmPasswordInput.addEventListener("keyup", enableFormSubmit);
 
   return form;
 

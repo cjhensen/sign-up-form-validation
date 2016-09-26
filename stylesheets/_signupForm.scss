@@ -29,6 +29,8 @@ form {
     flex: 0 0 100%;
 
     span {
+      display: none;
+      
       position: absolute;
       z-index: 999;
       top: 0;
